@@ -1,12 +1,67 @@
 {
-  "examples": [
+  "products": [
     {
       "id": "1",
-      "name": "Toan"
-    },
+      "frontBrand": {
+        "brandNameEng": "Magpie&Tiger",
+        "brandNameKor": "맥파이앤타이거",
+        "heartCount": 705
+      },
+      "itemImage": {
+        "imageHeight": 1080,
+        "imageWidth": 1080,
+        "imageUrl": "https://img.29cm.co.kr/item/202308/11ee4315d967d9ff8a69c7b418cbe14c.jpeg"
+      },
+      "itemName": "[선물포장] 티머그 & 논카페인 잎차 세트",
+      "itemNo": 2047058,
+      "isDependentSellType": false,
+      "maxOrderQty": 0,
+      "sellPrice": 43200,
+      "consumerPrice": 45500,
+      "deliveryInfo": "해당 브랜드 제품으로만 50000원 이상 구매시 무료배송 ( 미만시 배송비 3000원 발생\n)\n제주도를 포함한 도서/산간 지역 추가 배송비 없음",
+      "discountRate": 5,
+      "isSoldout": false,
+      "sizes": [
+        {
+          "name": "L - Large",
+          "quantity": 0
+        },
+        {
+          "name": "M - Medium",
+          "quantity": 100
+        },
+        {
+          "name": "S - Small",
+          "quantity": 100
+        }
+      ],
+      "colors": [
+        {
+          "name": "Teal",
+          "quantity": 100
+        },
+        {
+          "name": "White",
+          "quantity": 100
+        },
+        {
+          "name": "Black",
+          "quantity": 100
+        }
+      ]
+    }
+  ],
+  "carts": [
     {
-      "id": "8f99",
-      "name": "Huy"
+      "id": "1",
+      "productId": "1",
+      "size": {
+        "name": "S - Small"
+      },
+      "color": {
+        "name": "Teal"
+      },
+      "quantity": 1
     }
   ]
 }

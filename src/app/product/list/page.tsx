@@ -1,20 +1,20 @@
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
-import { QUERY_KEY } from "@/constants";
-import ProductDetails from ".";
 import ProductService from "@/services/product.service";
+import { QUERY_KEY } from "@/constants";
+import ProductList from "./";
 
-export default async function PostsPage() {
+export default async function ProductsPage() {
   const queryClient = new QueryClient();
   const productService = new ProductService();
 
   await queryClient.prefetchQuery({
-    queryKey: [QUERY_KEY.GET_PRODUCT_DETAILS],
-    queryFn: () => productService.getProductDetails("1"),
+    queryKey: [QUERY_KEY.GET_PRODUCT_LIST],
+    queryFn: () => productService.getProductList(),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <ProductDetails />
+      <ProductList />
     </HydrationBoundary>
   );
 }

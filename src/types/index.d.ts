@@ -1,3 +1,2 @@
-export * from "./socket"
-export * from "./http"
-export * from "./example"
+export * from "./http";
+export * from "./product";

@@ -1,19 +1,15 @@
 "use client";
-import { useExamplesQuery } from "@/hooks/react-query/useExampleQuery";
+import { useProductDetailsQuery } from "@/hooks/react-query/useProductQuery";
 
-function Test() {
-  const examplesQuery = useExamplesQuery();
+function ProductDetails() {
+  const { data } = useProductDetailsQuery({ productId: "1" });
 
   return (
     <div>
-      123
-      <div>
-        {examplesQuery.data?.map((user) => (
-          <p key={user.id}>{user.name}</p>
-        ))}
-      </div>
+      {data?.itemName}
+      <div></div>
     </div>
   );
 }
 
-export default Test;
+export default ProductDetails;
