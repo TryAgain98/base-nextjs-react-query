@@ -16,3 +16,5 @@ export const additionalOptions: ISelect[] = [
   { value: "선택안함", label: "선택안함" },
   { value: "Gift", label: "선물포장 (2,000원)" },
 ];
+
+export const PRODUCT_ID = "1";

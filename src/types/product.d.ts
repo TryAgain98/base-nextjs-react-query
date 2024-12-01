@@ -10,6 +10,7 @@ export interface IProduct {
     imageWidth: number;
     imageUrl: string;
   };
+  images: string[];
   itemName: string;
   itemNo: number;
   isDependentSellType: boolean;

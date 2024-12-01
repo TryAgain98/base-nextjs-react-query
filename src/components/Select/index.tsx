@@ -11,7 +11,7 @@ interface ReusableSelectProps {
   required?: boolean;
 }
 
-const ReusableSelect: React.FC<ReusableSelectProps> = ({ name, label, options, control, required }) => {
+const Select: React.FC<ReusableSelectProps> = ({ name, label, options, control, required }) => {
   const {
     field,
     fieldState: { error },
@@ -89,4 +89,4 @@ const ReusableSelect: React.FC<ReusableSelectProps> = ({ name, label, options, c
   );
 };
 
-export default ReusableSelect;
+export default Select;

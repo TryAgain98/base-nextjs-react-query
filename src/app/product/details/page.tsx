@@ -3,6 +3,7 @@ import { QUERY_KEY } from "@/constants";
 import ProductDetails from ".";
 import ProductService from "@/services/product.service";
 import Layout from "@/components/layout";
+import { PRODUCT_ID } from "./constant";
 
 export default async function PostsPage() {
   const queryClient = new QueryClient();
@@ -10,7 +11,7 @@ export default async function PostsPage() {
 
   await queryClient.prefetchQuery({
     queryKey: [QUERY_KEY.GET_PRODUCT_DETAILS],
-    queryFn: () => productService.getProductDetails("1"),
+    queryFn: () => productService.getProductDetails(PRODUCT_ID),
   });
 
   return (
