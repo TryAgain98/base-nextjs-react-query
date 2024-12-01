@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Name
 
-## Getting Started
+A web application built with Next.js, React Query, and Tailwind CSS.
 
-First, run the development server:
+## Setup and Run Application
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Backend (BE)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **json-server** is used to create the server.
+- To run the backend application:
+  1. Navigate to the `server` folder from the root directory.
+  2. Run `pnpm i` to install the necessary dependencies (You can also use `yarn` or `npm i`).
+  3. Start the server with the command `npm run dev` (or `yarn dev`).
+  4. Access [http://localhost:3000/products](http://localhost:3000/products) to check the server.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2. Frontend (FE)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- To run the frontend application:
+  1. Run `pnpm i` to install the necessary dependencies (You can also use `yarn` or `npm i`).
+  2. Start the frontend server with the command `npm run dev` (or `yarn dev`).
+  3. Access [http://localhost:3001](http://localhost:3001) to check the frontend.
 
-## Learn More
+## Development Guidelines
 
-To learn more about Next.js, take a look at the following resources:
+### Branch Naming Convention
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Main branches: `master`, `develop`, `staging`, `product`
+- Feature branches: `feat/feature-name`
+- Bug fix branches: `fix/bug-name`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Commit Message Convention
 
-## Deploy on Vercel
+Project uses commitlint to standardize commit messages:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- feat: new feature
+- fix: bug fix
+- docs: documentation updates
+- style: code style changes (formatting, etc.)
+- refactor: code refactoring
+- test: adding/modifying tests
+- chore: maintenance tasks
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technology Stack
+
+### Frontend
+
+- **Next.js**: React framework with SSR/SSG capabilities, routing, and performance optimizations
+- **React Query**: Server state management, caching, and data synchronization
+- **React Hook Form**: High-performance form handling and validation
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **TypeScript**: Enhanced type safety and developer experience
+
+### Backend
+
+- **JSON Server**: Rapid API mocking for development
+
+### Development Tools
+
+- **ESLint**: Code style checking and error detection
+- **Husky**: Automated pre-commit/pre-push hooks
+- **Commitlint**: Commit message standardization
+
+## Libraries and Frameworks in Use
+
+### Dependencies
+
+- **@heroicons/react**: Provides SVG icons for React
+- **@tanstack/react-query**: Manages and fetches data from APIs
+- **axios**: Makes HTTP requests
+- **next**: Framework for building React applications with SSR and SSG
+- **react-hook-form**: Manages and handles forms in React
+
+### DevDependencies
+
+- **@commitlint/cli**: Checks commit message convention
+- **eslint & eslint-config-next**: Linting and code quality maintenance
+- **husky**: Sets up Git hooks
+- **tailwindcss**: Utility-first CSS framework
+- **typescript**: Adds type safety to JavaScript
