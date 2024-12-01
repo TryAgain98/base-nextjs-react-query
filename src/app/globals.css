@@ -28,3 +28,17 @@ body {
     text-wrap: balance;
   }
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Độ rộng thanh cuộn */
+  height: 6px; /* Độ cao của thanh cuộn ngang */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; /* Màu thanh cuộn */
+  border-radius: 10px; /* Bo góc thanh cuộn */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Màu nền của track (phần đường đi của thanh cuộn) */
+}

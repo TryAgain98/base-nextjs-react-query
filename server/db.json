@@ -55,6 +55,14 @@
       "additionalOption": "",
       "productId": "1",
       "quantity": 1
+    },
+    {
+      "id": "e203",
+      "size": "M",
+      "color": "Black",
+      "additionalOption": "Gift",
+      "productId": "1",
+      "quantity": 1
     }
   ]
 }
