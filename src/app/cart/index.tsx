@@ -98,25 +98,29 @@ const Cart = () => {
   }, [JSON.stringify(carts)]);
 
   return (
-    <div className="p-4 space-y-4 text-sm">
-      <div className="flex justify-between items-center">
+    <div className="py-4 space-y-4 text-sm">
+      <div className="flex justify-between items-center px-4">
         <CheckBoxAll
           checked={checkedAll}
           onChange={onCheckAll}
-          label={`전체선택 (${getNumberOfChecked()}/${carts?.length})`}
+          label={`전체선택 (${getNumberOfChecked()}/${carts?.length ?? 0})`}
         />
         <Button variant="secondary" className="rounded-sm" disabled={checkedAll === "none"} onClick={onDeleteSelected}>
           선택삭제
         </Button>
       </div>
-      <Divider />
-      <div className="overflow-auto custom-scrollbar space-y-4 pr-2" style={{ height: "calc(100vh - 250px)" }}>
-        {carts?.map((cart) => (
-          <CartItem key={cart.id} cart={cart} carts={carts} setCarts={setCarts} />
-        ))}
+      <div className="px-4">
+        <Divider />
+      </div>
+      <div className="overflow-auto custom-scrollbar" style={{ height: "calc(100vh - 250px)" }}>
+        <div className="px-4 space-y-4">
+          {carts?.map((cart) => (
+            <CartItem key={cart.id} cart={cart} carts={carts} setCarts={setCarts} />
+          ))}
+        </div>
       </div>
 
-      <div className="flex items-center justify-between ">
+      <div className="flex items-center justify-between px-4">
         <span className="font-bold">총 {getTotalPrice()}원</span>
         <Button className="px-7 py-3" disabled={checkedAll === "none"}>
           결제하기

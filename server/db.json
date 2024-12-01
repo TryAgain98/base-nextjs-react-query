@@ -28,38 +28,5 @@
       "isSoldout": false
     }
   ],
-  "carts": [
-    {
-      "id": "c160",
-      "size": "M",
-      "color": "Teal",
-      "additionalOption": "",
-      "productId": "1",
-      "quantity": 1
-    },
-    {
-      "id": "dc7c",
-      "size": "M",
-      "color": "White",
-      "additionalOption": "",
-      "productId": "1",
-      "quantity": 1
-    },
-    {
-      "id": "232b",
-      "size": "S",
-      "color": "Teal",
-      "additionalOption": "",
-      "productId": "1",
-      "quantity": 1
-    },
-    {
-      "id": "7e8a",
-      "size": "L",
-      "color": "Teal",
-      "additionalOption": "",
-      "productId": "1",
-      "quantity": 1
-    }
-  ]
+  "carts": []
 }
