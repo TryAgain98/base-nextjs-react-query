@@ -2,6 +2,7 @@ import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query
 import { QUERY_KEY } from "@/constants";
 import ProductDetails from ".";
 import ProductService from "@/services/product.service";
+import Layout from "@/components/layout";
 
 export default async function PostsPage() {
   const queryClient = new QueryClient();
@@ -14,7 +15,9 @@ export default async function PostsPage() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <ProductDetails />
+      <Layout headerTitle="상품상세">
+        <ProductDetails />
+      </Layout>
     </HydrationBoundary>
   );
 }

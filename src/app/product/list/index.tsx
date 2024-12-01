@@ -3,10 +3,8 @@ import { useProductListQuery } from "@/hooks/react-query/useProductQuery";
 
 function ProductList() {
   const productListQuery = useProductListQuery();
-
   return (
-    <div>
-      123
+    <div className="">
       <div>
         {productListQuery.data?.map((product) => (
           <p key={product.id}>{product.itemName}</p>
