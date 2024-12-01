@@ -1,9 +1,8 @@
-import { ProductColorType, ProductSizeType } from "./product";
-
 export interface ICart {
   id: string;
   productId: string;
-  size: ProductSizeType;
-  color: ProductColorType;
+  size: string;
+  color: string;
+  additionalOption: string;
   quantity: number;
 }

@@ -6,6 +6,13 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { additionalOptions, colorOptions, sizeOptions } from "./constant";
+import { useProductDetailsQuery } from "@/hooks/react-query/useProductQuery";
+import { formatPrice } from "@/utils/price";
+import { useMutation } from "@tanstack/react-query";
+import CartService from "@/services/cart.service";
+import { ICart } from "@/types";
+import { useRouter } from "next/navigation";
+import { SCREENS } from "@/constants";
 
 interface FormValues {
   size: string;
@@ -13,8 +20,23 @@ interface FormValues {
   additionalOption: string;
 }
 
-export default function AddToCartForm() {
-  const { control, handleSubmit, watch } = useForm<FormValues>({
+export default function ProductDetails() {
+  const router = useRouter();
+  const cartService = new CartService();
+  const { data: productDetails } = useProductDetailsQuery({ productId: "1" });
+  const { mutate: onCreateCart } = useMutation({
+    mutationFn: (bodyData: Omit<ICart, "id">) => cartService.createCart(bodyData),
+    onSuccess: () => {
+      alert("Add successfully");
+      router.push(SCREENS.CART);
+    },
+  });
+  const {
+    control,
+    handleSubmit,
+    watch,
+    formState: { isValid },
+  } = useForm<FormValues>({
     defaultValues: {
       size: "",
       color: "",
@@ -22,14 +44,23 @@ export default function AddToCartForm() {
     },
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    alert(JSON.stringify(data));
-  };
-
   const watchSize = watch("size");
   const watchColor = watch("color");
 
-  const isDisabled = !watchSize || !watchColor || (watchSize === "L" && watchColor === "Black");
+  const isDisabled = watchSize === "L" && watchColor === "Black";
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    if (isDisabled) {
+      alert("The L size in Black is out of stock");
+      return;
+    }
+    const bodyData: Omit<ICart, "id"> = {
+      ...data,
+      productId: "1",
+      quantity: 1,
+    };
+    onCreateCart(bodyData);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-sm">
@@ -45,13 +76,13 @@ export default function AddToCartForm() {
         <ChevronRightIcon className="h-4 w-4" />
       </span>
       <div>
-        <p> 클래식 런치박스</p>
-        <p> 75,000</p>
+        <p> {productDetails?.itemName}</p>
+        <p> {formatPrice(productDetails?.sellPrice)}</p>
       </div>
       <ReusableSelect label="사이즈" name="size" options={sizeOptions} control={control} required />
       <ReusableSelect label="색상" name="color" options={colorOptions} control={control} required />
       <ReusableSelect label="추가옵션" name="additionalOption" options={additionalOptions} control={control} />
-      <Button type="submit" disabled={isDisabled} className="w-full">
+      <Button type="submit" disabled={!isValid || isDisabled} className="w-full">
         장바구니 담기
       </Button>
     </form>

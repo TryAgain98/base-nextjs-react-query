@@ -1,12 +1,12 @@
 "use client";
-import { useCartDetailsQuery } from "@/hooks/react-query/useCartQuery";
+import { useCartListQuery } from "@/hooks/react-query/useCartQuery";
 
 function ProductDetails() {
-  const { data } = useCartDetailsQuery({ cartId: "1" });
-
+  const { data } = useCartListQuery();
+  console.log({ data });
   return (
     <div>
-      <div>{data?.color.name}</div>
+      <div>{"sdfds"}</div>
     </div>
   );
 }

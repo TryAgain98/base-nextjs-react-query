@@ -3,6 +3,6 @@ export const SCREENS = {
   PRODUCT: {
     LIST: "/product/list",
     DETAILS: "/product/details",
-    CART: "/product/cart",
   },
+  CART: "/cart",
 };

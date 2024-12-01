@@ -1,13 +1,3 @@
-export type ProductSizeType = {
-  name: string;
-  quantity?: number;
-};
-
-export type ProductColorType = {
-  name: string;
-  quantity?: number;
-};
-
 export interface IProduct {
   id: string;
   frontBrand: {
@@ -29,6 +19,4 @@ export interface IProduct {
   deliveryInfo: string;
   discountRate: number;
   isSoldout: boolean;
-  sizes: Array<ProductSizeType>;
-  colors: Array<ProductColorType>;
 }

@@ -8,8 +8,8 @@ export default async function PostsPage() {
   const cartService = new CartService();
 
   await queryClient.prefetchQuery({
-    queryKey: [QUERY_KEY.GET_CART_DETAILS],
-    queryFn: () => cartService.getCartDetails("1"),
+    queryKey: [QUERY_KEY.GET_CART_LIST],
+    queryFn: () => cartService.getCartList(),
   });
 
   return (

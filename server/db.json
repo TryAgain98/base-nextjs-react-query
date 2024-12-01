@@ -20,47 +20,40 @@
       "consumerPrice": 45500,
       "deliveryInfo": "해당 브랜드 제품으로만 50000원 이상 구매시 무료배송 ( 미만시 배송비 3000원 발생\n)\n제주도를 포함한 도서/산간 지역 추가 배송비 없음",
       "discountRate": 5,
-      "isSoldout": false,
-      "sizes": [
-        {
-          "name": "L - Large",
-          "quantity": 0
-        },
-        {
-          "name": "M - Medium",
-          "quantity": 100
-        },
-        {
-          "name": "S - Small",
-          "quantity": 100
-        }
-      ],
-      "colors": [
-        {
-          "name": "Teal",
-          "quantity": 100
-        },
-        {
-          "name": "White",
-          "quantity": 100
-        },
-        {
-          "name": "Black",
-          "quantity": 100
-        }
-      ]
+      "isSoldout": false
     }
   ],
   "carts": [
     {
-      "id": "1",
+      "id": "6488",
+      "size": "L",
+      "color": "Teal",
+      "additionalOption": "",
       "productId": "1",
-      "size": {
-        "name": "S - Small"
-      },
-      "color": {
-        "name": "Teal"
-      },
+      "quantity": 1
+    },
+    {
+      "id": "296d",
+      "size": "L",
+      "color": "Teal",
+      "additionalOption": "Gift",
+      "productId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "887a",
+      "size": "S",
+      "color": "Teal",
+      "additionalOption": "",
+      "productId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "cbfa",
+      "size": "L",
+      "color": "Teal",
+      "additionalOption": "",
+      "productId": "1",
       "quantity": 1
     }
   ]
