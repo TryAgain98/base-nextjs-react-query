@@ -11,7 +11,6 @@ export default async function CartPage() {
   const queryClient = new QueryClient();
   const cartService = new CartService();
 
-  console.log("=============================");
   await queryClient.prefetchQuery({
     queryKey: [QUERY_KEY.GET_CART_LIST],
     queryFn: () => cartService.getCartList(),

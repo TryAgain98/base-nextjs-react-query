@@ -17,9 +17,8 @@ const CheckBoxAll: React.FC<CheckBoxProps> = ({ checked, onChange, label }) => {
   };
 
   return (
-    <label className="flex items-center gap-2 cursor-pointer select-none">
+    <label className="flex items-center gap-2 cursor-pointer select-none" onClick={() => handleChange(checked)}>
       <div
-        onClick={() => handleChange(checked)}
         className={`w-5 h-5 flex items-center justify-center border border-border rounded-sm ${
           checked !== "none" ? "bg-black text-white" : "bg-white"
         }`}

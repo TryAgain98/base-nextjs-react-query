@@ -3,6 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import QueryQueryProvider from "@/providers/ReactQueryProvider";
 import favicon from "@/assets/favicon.ico";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const geistSans = localFont({
   src: "../assets/fonts/GeistVF.woff",

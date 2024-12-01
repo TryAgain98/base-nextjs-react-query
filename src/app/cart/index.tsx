@@ -8,16 +8,19 @@ import CheckBoxAll, { CheckBoxAllType } from "@/components/CheckBox/CheckBoxAll"
 import { ICart } from "@/types";
 import { useProductDetailsQuery } from "@/hooks/react-query/useProductQuery";
 import { PRODUCT_ID } from "../product/details/constant";
+import Loading from "@/components/Loading";
 export interface ICartCheck extends ICart {
   isChecked: boolean;
 }
 
 const Cart = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const { data: productDetails } = useProductDetailsQuery({ productId: PRODUCT_ID });
   const [carts, setCarts] = useState<ICartCheck[]>();
   const { data, refetch: refetchCarts } = useCartListQuery();
   const [checkedAll, setCheckedAll] = useState<CheckBoxAllType>("none");
   const { mutate: deleteCart } = useDeleteCartMutation();
+  const isEmpty = !!carts && carts.length === 0;
 
   const updateCarts = (checkAll?: boolean) => {
     if (data) {
@@ -28,6 +31,7 @@ const Cart = () => {
         };
       });
       setCarts(newCarts);
+      setIsLoading(false);
     }
   };
 
@@ -97,31 +101,52 @@ const Cart = () => {
     updateCheckAll();
   }, [JSON.stringify(carts)]);
 
-  return (
-    <div className="p-4 space-y-4 text-sm">
-      <div className="flex justify-between items-center">
-        <CheckBoxAll
-          checked={checkedAll}
-          onChange={onCheckAll}
-          label={`전체선택 (${getNumberOfChecked()}/${carts?.length})`}
-        />
-        <Button variant="secondary" className="rounded-sm" disabled={checkedAll === "none"} onClick={onDeleteSelected}>
-          선택삭제
-        </Button>
-      </div>
-      <Divider />
-      <div className="overflow-auto custom-scrollbar space-y-4 pr-2" style={{ height: "calc(100vh - 250px)" }}>
-        {carts?.map((cart) => (
-          <CartItem key={cart.id} cart={cart} carts={carts} setCarts={setCarts} />
-        ))}
-      </div>
+  if (isLoading) {
+    return <Loading />;
+  }
 
-      <div className="flex items-center justify-between ">
-        <span className="font-bold">총 {getTotalPrice()}원</span>
-        <Button className="px-7 py-3" disabled={checkedAll === "none"}>
-          결제하기
-        </Button>
-      </div>
+  return (
+    <div className="py-4 space-y-4 text-sm">
+      {isEmpty ? (
+        <div className="flex h-full flex-col gap-3 items-center justify-center min-h-64">
+          <p>You have no products here.</p>
+        </div>
+      ) : (
+        <>
+          <div className="flex justify-between items-center px-4">
+            <CheckBoxAll
+              checked={checkedAll}
+              onChange={onCheckAll}
+              label={`전체선택 (${getNumberOfChecked()}/${carts?.length ?? 0})`}
+            />
+            <Button
+              variant="secondary"
+              className="rounded-sm"
+              disabled={checkedAll === "none"}
+              onClick={onDeleteSelected}
+            >
+              선택삭제
+            </Button>
+          </div>
+          <div className="px-4">
+            <Divider />
+          </div>
+          <div className="overflow-auto custom-scrollbar" style={{ height: "calc(100vh - 250px)" }}>
+            <div className="px-4 space-y-4">
+              {carts?.map((cart) => (
+                <CartItem key={cart.id} cart={cart} carts={carts} setCarts={setCarts} />
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between px-4">
+            <span className="font-bold">총 {getTotalPrice()}원</span>
+            <Button className="px-7 py-3" disabled={checkedAll === "none"}>
+              결제하기
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

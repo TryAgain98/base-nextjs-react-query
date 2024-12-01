@@ -69,6 +69,7 @@ Project uses commitlint to standardize commit messages:
 - **axios**: Makes HTTP requests
 - **next**: Framework for building React applications with SSR and SSG
 - **react-hook-form**: Manages and handles forms in React
+- **swiper**: Modern touch slider library for creating carousels and sliders
 
 ### DevDependencies
 

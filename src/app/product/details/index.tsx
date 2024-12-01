@@ -89,9 +89,9 @@ export default function ProductDetails() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-sm">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-sm pb-5">
       <ImageCarousel images={productDetails?.images ?? []} />
-      <div className="px-4 space-y-4">
+      <div className="px-4 space-y-4 ">
         <span className="flex gap-1 items-center text-[gray]">
           <span>Brand</span>
           <ChevronRightIcon className="h-4 w-4" />

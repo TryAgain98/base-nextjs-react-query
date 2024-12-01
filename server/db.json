@@ -10,12 +10,12 @@
       "itemImage": {
         "imageHeight": 1080,
         "imageWidth": 1080,
-        "imageUrl": "https://img.29cm.co.kr/item/202308/11ee4315d967d9ff8a69c7b418cbe14c.jpeg"
+        "imageUrl": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh32revc2rle4c.webp"
       },
       "images": [
-        "https://down-vn.img.susercontent.com/file/vn-11134201-7ras8-m2opgzqtcj3u39",
-        "https://down-vn.img.susercontent.com/file/vn-11134201-7ras8-m2opgzhxpj4676",
-        "https://down-vn.img.susercontent.com/file/vn-11134201-7ras8-m2opgzw33f2ead"
+        "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh32revc2rle4c.webp",
+        "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh32revbevxu7c.webp",
+        "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh32revbuc6q57.webp"
       ],
       "itemName": "클래식 런치박스",
       "itemNo": 2047058,
@@ -30,23 +30,7 @@
   ],
   "carts": [
     {
-      "id": "c160",
-      "size": "M",
-      "color": "Teal",
-      "additionalOption": "",
-      "productId": "1",
-      "quantity": 1
-    },
-    {
-      "id": "dc7c",
-      "size": "M",
-      "color": "White",
-      "additionalOption": "",
-      "productId": "1",
-      "quantity": 1
-    },
-    {
-      "id": "232b",
+      "id": "674a",
       "size": "S",
       "color": "Teal",
       "additionalOption": "",
@@ -54,10 +38,18 @@
       "quantity": 1
     },
     {
-      "id": "7e8a",
-      "size": "L",
+      "id": "eae2",
+      "size": "M",
       "color": "Teal",
-      "additionalOption": "",
+      "additionalOption": "Gift",
+      "productId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "d99a",
+      "size": "S",
+      "color": "White",
+      "additionalOption": "선택안함",
       "productId": "1",
       "quantity": 1
     }
